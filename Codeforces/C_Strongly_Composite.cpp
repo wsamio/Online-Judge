@@ -22,13 +22,13 @@ void Testcase() {
     }
     if(x > 1) cnt[x]++;
   }
-  long long ans = 0, rest = 0;
-  for(auto i : cnt) {
-    long long t = i.second / 2ll;
-    ans += t;
-    rest += 1ll * i.second - t * 2;
+  int ans = 0, res = 0;
+  for(auto [i, j]: cnt) {
+    ans += j / 2;
+    res += j % 2;
   }
-  cout << ans + rest / 3 << '\n';
+  ans += res/3;
+  cout << ans << '\n';
 }
 
 int main() {
